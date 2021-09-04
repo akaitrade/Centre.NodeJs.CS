@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "thrift": "^0.14.2"
-  }
+  },
+  "name": "centre-nodejs-credits",
+  "description": "Third Party Library for implementing Credits Blockchain in Node Javascript",
+  "version": "1.0.0",
+  "main": "Connector.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akaitrade/Centre.NodeJs.CS.git"
+  },
+  "author": "BK",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akaitrade/Centre.NodeJs.CS/issues"
+  },
+  "homepage": "https://github.com/akaitrade/Centre.NodeJs.CS#readme"
 }
