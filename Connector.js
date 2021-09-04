@@ -124,6 +124,119 @@ class Connector{
       })
     }
 
+    PoolTransactionsGet(Sequence,Offset=0, Limit=10){
+      return new Promise(resolve => {
+          resolve(this.client.PoolTransactionsGet(Sequence,Offset, Limit));
+      })
+    }
+    SmartContractGet(Address){
+      return new Promise(resolve => {
+          resolve(this.client.SmartContractGet(base58tobytes(Address)));
+      })
+    }
+
+    SmartContractsListGet(Deployer, Offset=0, Limit=10){
+      return new Promise(resolve => {
+          resolve(this.client.SmartContractGet(base58tobytes(Deployer),Offset,Limit));
+      })
+    }
+
+    TransactionsStateGet(Address, Id){
+      return new Promise(resolve => {
+          resolve(this.client.TransactionsStateGet(base58tobytes(Address),Id));
+      })
+    }
+
+    ContractAllMethodsGet(byteCodeObjects){
+      return new Promise(resolve => {
+          resolve(this.client.TransactionsStateGet(byteCodeObjects));
+      })
+    }
+
+    SmartMethodParamsGet(Address, Id){
+      return new Promise(resolve => {
+          resolve(this.client.TransactionsStateGet(base58tobytes(Address), Id));
+      })
+    }
+
+    SmartContractDataGet(Address){
+      return new Promise(resolve => {
+          resolve(this.client.SmartContractDataGet(base58tobytes(Address)));
+      })
+    }
+
+    SmartContractCompile(SCcode){
+      return new Promise(resolve => {
+          resolve(this.client.SmartContractCompile(SCcode));
+      })
+    }
+
+    TokenBalancesGet(Address){
+      return new Promise(resolve => {
+          resolve(this.client.SmartContractCompile(base58tobytes(Address)));
+      })
+    }
+
+    TokenTransfersGet(Token, Offset=0, Limit=0){
+      return new Promise(resolve => {
+          resolve(this.client.TokenTransfersGet(base58tobytes(Token),Offset,Limit));
+      })
+    }
+
+    TokenTransferGet(Token, TxsID){
+      return new Promise(resolve => {
+          resolve(this.client.TokenTransferGet(base58tobytes(Token),TxsID));
+      })
+    }
+
+    TokenTransferGet(Token, TxsID){
+      return new Promise(resolve => {
+          resolve(this.client.TokenTransferGet(base58tobytes(Token),TxsID));
+      })
+    }
+
+    TokenTransfersListGet(Offset=0, Limit=0){
+      return new Promise(resolve => {
+          resolve(this.client.TokenTransfersListGet(Offset, Limit));
+      })
+    }
+
+    TokenWalletTransfersGet(Token, Address,Offset=0, Limit=0){
+      return new Promise(resolve => {
+          resolve(this.client.TokenWalletTransfersGet(base58tobytes(Token),base58tobytes(Address),Offset, Limit));
+      })
+    }
+
+    TokenInfoGet(Token){
+      return new Promise(resolve => {
+          resolve(this.client.TokenInfoGet(base58tobytes(Token)));
+      })
+    }
+
+    TokenHoldersGet(Token, Order, Desc, Offset=0, Limit=0){
+      return new Promise(resolve => {
+          resolve(this.client.TokenHoldersGet(base58tobytes(Token), Order, Desc, Offset, Limit));
+      })
+    }
+
+    TokensListGet(Order, Filters, Desc, Offset=0, Limit=10){
+      return new Promise(resolve => {
+          resolve(this.client.TokensListGet(Order, Filters, Desc, Offset, Limit));
+      })
+    }
+
+    WalletsGet(OrdCol, Desc, Offset=0, Limit=10){
+      return new Promise(resolve => {
+          resolve(this.client.WalletsGet(OrdCol, Desc, Offset, Limit));
+      })
+    }
+
+    TrustedGet(Page){
+      return new Promise(resolve => {
+          resolve(this.client.TrustedGet(Page));
+      })
+    }
+
 
 
 }
@@ -143,4 +256,20 @@ var connect_ = new Connector("165.22.212.253", 9090);
 //connect_.WalletIdGet("ACkyon3ERkNEcNwpjUn4S6TLP3L76LFg3X6kWoJx82dK").then((res) => {connect_.Close();console.log(res); });
 //connect_.PoolListGetStable(0,10).then((res) => {connect_.Close();console.log(res); });
 //connect_.PoolListGet(0,10).then((res) => {connect_.Close();console.log(res); });
-connect_.PoolInfoGet(0,10).then((res) => {connect_.Close();console.log(res); });
+//connect_.PoolInfoGet(0,10).then((res) => {connect_.Close();console.log(res); });
+//connect_.PoolTransactionsGet(544,0,10).then((res) => {connect_.Close();console.log(res); });
+//connect_.SmartContractGet("12DHXQ8rzYUawD6VSD6WuVaTQ4uen7fStWsTmZASnDv1").then((res) => {connect_.Close();console.log(res); });
+//connect_.SmartContractsListGet("EoPibFsGPE4xqXH2tYTBQUeJqSMMFvCZUdqAW9Bnh3nd",0,2).then((res) => {connect_.Close();console.log(res); });
+//connect_.TransactionsStateGet("EoPibFsGPE4xqXH2tYTBQUeJqSMMFvCZUdqAW9Bnh3nd",null).then((res) => {connect_.Close();console.log(res); });
+//connect_.SmartContractGet("12DHXQ8rzYUawD6VSD6WuVaTQ4uen7fStWsTmZASnDv1").then((res) => {
+//  connect_.ContractAllMethodsGet("12DHXQ8rzYUawD6VSD6WuVaTQ4uen7fStWsTmZASnDv1",res.smartContract.smartContractDeploy.byteCodeObjects).then((res) => {connect_.Close();console.log(res); });
+//});
+//connect_.SmartMethodParamsGet("EoPibFsGPE4xqXH2tYTBQUeJqSMMFvCZUdqAW9Bnh3nd",1).then((res) => {connect_.Close();console.log(res); });
+//connect_.SmartContractDataGet("12DHXQ8rzYUawD6VSD6WuVaTQ4uen7fStWsTmZASnDv1").then((res) => {connect_.Close();console.log(res); });
+//connect_.SmartContractCompile("import com.credits.scapi.annotations.*; import com.credits.scapi.v0.*; public class MySmartContract extends SmartContract { public MySmartContract() {} public String hello2(String say) { return \"Hello\" + say; } }").then((res) => {connect_.Close();console.log(res); });
+//connect_.TokenBalancesGet("4SFfA1S2xfA3BdgkTn2tK14yDhLuD11RVz78kqx35jct").then((res) => {connect_.Close();console.log(res); });
+//connect_.TokenBalancesGet("4SFfA1S2xfA3BdgkTn2tK14yDhLuD11RVz78kqx35jct",0,10).then((res) => {connect_.Close();console.log(res); });
+//connect_.TokenTransferGet("4SFfA1S2xfA3BdgkTn2tK14yDhLuD11RVz78kqx35jct").then((res) => {connect_.Close();console.log(res); });
+//connect_.TokenTransfersListGet(0,10).then((res) => {connect_.Close();console.log(res); });
+//connect_.TokenWalletTransfersGet("12DHXQ8rzYUawD6VSD6WuVaTQ4uen7fStWsTmZASnDv1","12DHXQ8rzYUawD6VSD6WuVaTQ4uen7fStWsTmZASnDv1",0,10).then((res) => {connect_.Close();console.log(res); });
+//connect_.TokenInfoGet("12DHXQ8rzYUawD6VSD6WuVaTQ4uen7fStWsTmZASnDv1").then((res) => {connect_.Close();console.log(res); });
