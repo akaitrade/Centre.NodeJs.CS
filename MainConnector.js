@@ -358,10 +358,10 @@ class Connector{
 
 }
 
+module.exports = Connector;
 
-
-var connect_ = new Connector("194.163.152.177", 9091);
-connect_.SendTransaction(0,0,0.1,"5B3YXqDTcWQFGAqEJQJP3Bg1ZK8FFtHtgCiFLT5VAxpe","3rUevsW5xfob6qDxWMDFwwTQCq39SYhzstuyfUGSDvF2QHBRyPD8fSk49wFXaPk3GztfxtuU85QHfMV3ozfqa7rN","7TAp6BWBMJ3Ep6Wayu1TSApXifBFVAoZtCx6fALjo4At").then((res) => {connect_.Close();console.log(res); });
+//var connect_ = new Connector("194.163.152.177", 9091);
+//connect_.SendTransaction(0,0,0.1,"5B3YXqDTcWQFGAqEJQJP3Bg1ZK8FFtHtgCiFLT5VAxpe","3rUevsW5xfob6qDxWMDFwwTQCq39SYhzstuyfUGSDvF2QHBRyPD8fSk49wFXaPk3GztfxtuU85QHfMV3ozfqa7rN","7TAp6BWBMJ3Ep6Wayu1TSApXifBFVAoZtCx6fALjo4At").then((res) => {connect_.Close();console.log(res); });
 //connect_.TransactionsListGet(0,10).then((res) => {connect_.Close();console.log(res); });
 //connect_.TransactionGet(63192736,0).then((res) => {connect_.Close();console.log(res); });
 //connect_.WalletGetBalance("Ba2Uhtcy4cZ6nJNaQKXWcdLgPH7Kat2R67CUkRU2bkTk").then((res) => {connect_.Close();console.log(res); });

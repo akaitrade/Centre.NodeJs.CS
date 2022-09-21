@@ -4,8 +4,8 @@
   },
   "name": "centre-nodejs-credits",
   "description": "Third Party Library for implementing Credits Blockchain in Node Javascript",
-  "version": "1.0.0",
-  "main": "Connector.js",
+  "version": "1.0.3",
+  "main": "MainConnector.js",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
